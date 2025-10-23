@@ -12,8 +12,8 @@ from ultralytics import YOLO
 
 # ========= Ayarlar =========
 MODEL_PATH = 'models/best.pt'
-CONF_THRES = 0.40      # FP azalsın
-IOU_THRES  = 0.45
+CONF_THRES = 0.30      # FP azalsın
+IOU_THRES  = 0.55
 MAX_ROI    = 10
 
 # Sadece beklediğin sözlük (tek tip ise bunu bırak)
@@ -52,8 +52,8 @@ detect_aruco = make_aruco_detector(DICT_ID)
 # ========= Model & Capture =========
 model = YOLO(MODEL_PATH)
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH,  1280)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH,  800)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 600)
 
 t_last = time.time()
 fps = 0.0
